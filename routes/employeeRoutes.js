@@ -12,7 +12,7 @@ router.get("/employee/list", getEmployeeList)
 
 router.post("/employee/add", addEmployee)
 
-// router.patch("/employee/edit/:id", updateEmployee)
+router.patch("/employee/edit/:id", updateEmployee)
 
 router.delete("/employee/delete/:id", removeEmployee)
 

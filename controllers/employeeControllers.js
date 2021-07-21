@@ -22,6 +22,30 @@ module.exports.addEmployee = async (req, res) => {
   }
 };
 
+module.exports.updateEmployee = async (req, res) => {
+  try {
+    const updatedEmployee = await EmployeeDetail.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+        upsert: false,
+        runValidators: true,
+      }
+    );
+
+    if (!updatedEmployee)
+      throw new Error("No Employee Detail found for this ID");
+
+    res.status(200).json(updatedEmployee);
+  } catch (err) {
+    res.status(400).json({
+      name: err.name,
+      message: err.message,
+    });
+  }
+};
+
 module.exports.removeEmployee = async (req, res) => {
   try {
     const deletedEmployee = await EmployeeDetail.findOneAndDelete(

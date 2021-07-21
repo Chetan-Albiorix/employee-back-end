@@ -3,17 +3,17 @@ const {
     getEmployeeList,
     addEmployee,
     updateEmployee,
-    deleteEmployee,
+    removeEmployee,
 } = require("../controllers/employeeControllers")
 
 const router = express.Router()
 
-// router.get("/employee/list", getEmployeeList)
+router.get("/employee/list", getEmployeeList)
 
 router.post("/employee/add", addEmployee)
 
 // router.patch("/employee/edit/:id", updateEmployee)
 
-// router.delete("/employee/delete/:id", deleteEmployee)
+router.delete("/employee/delete/:id", removeEmployee)
 
 module.exports = router

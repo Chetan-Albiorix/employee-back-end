@@ -1,0 +1,27 @@
+{
+  "name": "employee-back-end",
+  "version": "1.0.0",
+  "description": "this application developed for employee management back-end",
+  "main": "server.js",
+  "scripts": {
+    "serve": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chetan-Albiorix/employee-back-end.git"
+  },
+  "author": "chetan chudasama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chetan-Albiorix/employee-back-end/issues"
+  },
+  "homepage": "https://github.com/Chetan-Albiorix/employee-back-end#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemod": "^2.8.4"
+  }
+}

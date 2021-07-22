@@ -4,7 +4,7 @@
   "description": "this application developed for employee management back-end",
   "main": "server.js",
   "scripts": {
-    "serve": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

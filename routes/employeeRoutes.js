@@ -1,19 +1,23 @@
-const express = require("express")
-const { 
-    getEmployeeList,
-    addEmployee,
-    updateEmployee,
-    removeEmployee,
-} = require("../controllers/employeeControllers")
+const express = require("express");
+const {
+  getEmployeeList,
+  addEmployee,
+  updateEmployee,
+  removeEmployee,
+} = require("../controllers/employeeControllers");
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/employee/list", getEmployeeList)
+router.get("/", (req, res) => {
+  res.send("Welcome To Employee Management Back-end");
+});
 
-router.post("/employee/add", addEmployee)
+router.get("/employee/list", getEmployeeList);
 
-router.patch("/employee/edit/:id", updateEmployee)
+router.post("/employee/add", addEmployee);
 
-router.delete("/employee/delete/:id", removeEmployee)
+router.patch("/employee/edit/:id", updateEmployee);
 
-module.exports = router
+router.delete("/employee/delete/:id", removeEmployee);
+
+module.exports = router;

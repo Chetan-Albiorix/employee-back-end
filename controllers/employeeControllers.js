@@ -55,7 +55,7 @@ module.exports.removeEmployee = async (req, res) => {
     if (!deletedEmployee)
       throw new Error("No Employee Detail found for this ID");
 
-    res.status(200).json({ message: "employee Detail Deleted successfully" });
+    res.status(200).json(req.params.id);
   } catch (err) {
     res.status(400).json({
       name: err.name,

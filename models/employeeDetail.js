@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+// used for rename property of id instead of _id 
+const normalize = require('normalize-mongoose')
 
 const employeeDetailSchema = new mongoose.Schema({
     personalDetail: {
@@ -156,4 +158,5 @@ const employeeDetailSchema = new mongoose.Schema({
     }
 });
 
+employeeDetailSchema.plugin(normalize);
 module.exports = mongoose.model('EmployeeDetail', employeeDetailSchema)

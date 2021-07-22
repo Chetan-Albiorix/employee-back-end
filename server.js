@@ -1,9 +1,14 @@
 require('dotenv').config()
 
-const express = require("express")
+var express = require("express")
 const mongoose = require("mongoose")
 const employeeRoutes = require("./routes/employeeRoutes")
-const app = express()
+
+var cors = require('cors')
+
+var app = express()
+
+app.use(cors())
 
 // set url for mogodb database 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true})

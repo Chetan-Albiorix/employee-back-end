@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+// used for rename property of id instead of _id 
+const normalize = require('normalize-mongoose')
 
 const employeeDetailSchema = new mongoose.Schema({
     personalDetail: {
@@ -23,7 +25,8 @@ const employeeDetailSchema = new mongoose.Schema({
             type: String,
             validate: {
                 validator: function(v) {
-                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+                    const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                    return emailRegex.test(v);
                 },
                 message: "Please enter a valid email"
             },
@@ -156,4 +159,5 @@ const employeeDetailSchema = new mongoose.Schema({
     }
 });
 
+employeeDetailSchema.plugin(normalize);
 module.exports = mongoose.model('EmployeeDetail', employeeDetailSchema)

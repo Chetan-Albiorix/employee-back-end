@@ -25,7 +25,8 @@ const employeeDetailSchema = new mongoose.Schema({
             type: String,
             validate: {
                 validator: function(v) {
-                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+                    const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                    return emailRegex.test(v);
                 },
                 message: "Please enter a valid email"
             },

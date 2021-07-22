@@ -41,7 +41,7 @@ module.exports.updateEmployee = async (req, res) => {
   } catch (err) {
     res.status(400).json({
       name: err.name,
-      message: err.message,
+      message: err.message.split(":")[2].split(",")[0],
     });
   }
 };

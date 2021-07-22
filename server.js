@@ -1,31 +1,34 @@
-require('dotenv').config()
+// require("dotenv").config();
 
-var express = require("express")
-const mongoose = require("mongoose")
-const employeeRoutes = require("./routes/employeeRoutes")
+var express = require("express");
+const mongoose = require("mongoose");
+const employeeRoutes = require("./routes/employeeRoutes");
 
-var cors = require('cors')
+var cors = require("cors");
 
-var app = express()
+var app = express();
 
-app.use(cors())
+app.use(cors());
 
-// set url for mogodb database 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true})
+// set url for mogodb database
+mongoose.connect(
+  "mongodb+srv://chetan:1tpBT0mbb8oXMnIY@cluster0.lgbkn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  { useNewUrlParser: true }
+);
 
 // connection to mongoose driver
-const db = mongoose.connection
+const db = mongoose.connection;
 
 // handle an error of database connection
-db.on('error', (error) => console.error(error))
+db.on("error", (error) => console.error(error));
 
-// display message successfully when database connected   
-db.once("open", () => console.log("Database Connection Successfully"))
+// display message successfully when database connected
+db.once("open", () => console.log("Database Connection Successfully"));
 
-// manage post request to 
-app.use(express.json())
+// manage post request to
+app.use(express.json());
 
 // manage routes of employee
-app.use(employeeRoutes)
+app.use(employeeRoutes);
 
-app.listen(3000, () => console.log("Server started"))
+app.listen(3000, () => console.log("Server started"));

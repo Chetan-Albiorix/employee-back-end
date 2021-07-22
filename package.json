@@ -22,8 +22,4 @@
     "mongoose": "^5.13.3",
     "normalize-mongoose": "0.0.1"
   },
-  "devDependencies": {
-    "dotenv": "^10.0.0",
-    "nodemod": "^2.8.4"
-  }
 }

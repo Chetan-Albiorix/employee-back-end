@@ -23,10 +23,10 @@ db.on("error", (error) => console.error(error));
 // display message successfully when database connected
 db.once("open", () => console.log("Database Connection Successfully"));
 
+app.listen(process.env.PORT || 3000, () => console.log("Server started"))
+
 // manage post request to
 app.use(express.json());
 
 // manage routes of employee
 app.use(employeeRoutes);
-
-app.listen(5000, () => console.log("Server started"))

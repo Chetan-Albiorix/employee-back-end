@@ -29,4 +29,4 @@ app.use(express.json());
 // manage routes of employee
 app.use(employeeRoutes);
 
-app.listen(3000, () => console.log("Server started"));
+app.listen(5000, () => console.log("Server started"))
